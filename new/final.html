@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Verification Option</title>
+    <link rel="shortcut icon" type="image/png" href="1.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('3.webp'); /* Background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column; /* Align items in a column */
+            color: #333; /* Dark text color */
+        }
+
+        h1 {
+            font-size: 48px; /* Increase font size */
+            font-weight: bold; /* Bold text */
+            text-transform: uppercase; /* Uppercase text */
+            color: #222; /* Dark shade text color */
+            margin-bottom: 30px; /* Add margin for spacing */
+        }
+
+        .button-container {
+            display: flex; /* Display buttons in a row */
+            justify-content: center; /* Center buttons horizontally */
+            align-items: center; /* Center buttons vertically */
+        }
+
+        .biometric-button {
+            width: 300px; /* Set width for button */
+            height: 300px; /* Set height for button */
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            outline: none; /* Remove default button outline */
+            position: relative; /* Relative positioning for text centering */
+            background-size: cover; /* Adjust background size */
+            background-position: center; /* Center the background image */
+            background-repeat: no-repeat; /* Prevent background image from repeating */
+            transition: transform 0.3s; /* Add transition for hover effect */
+            margin: 10px; /* Add margin between buttons */
+        }
+
+        .biometric-button:hover {
+            transform: scale(1.1); /* Scale button on hover */
+        }
+
+        .thumb-impression-button {
+            background-image: url('x.jpeg'); /* Thumb impression button background image */
+        }
+
+        .iris-recognition-button {
+            background-image: url('y.jpeg'); /* Iris recognition button background image */
+        }
+        .biometric-button {
+    width: 200px; /* Set width for button */
+    height: 70px; /* Set height for button */
+    background-color: #ff6347; /* Change the background color */
+    border: none;
+    cursor: pointer;
+    outline: none; /* Remove default button outline */
+    position: relative; /* Relative positioning for text centering */
+    background-size: cover; /* Adjust background size */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent background image from repeating */
+    transition: transform 0.3s; /* Add transition for hover effect */
+    margin: 10px; /* Add margin between buttons */
+}
+
+    </style>
+</head>
+<body>
+    <h1>Final Status</h1> <!-- Heading in bold and capital format -->
+
+    <div class="button-container">
+        <form action="success.php">
+        <button class="biometric-button" onclick="playButtonClickSound('audio.mp3')"><b>Successfull</b></button></form> 
+        <!-- Thumb impression button -->
+        <form action="unsuccess.php">
+        <button class="biometric-button" onclick="playButtonClickSound('audio.mp3')"><b>Unsuccessfull</b></button> <!-- Iris recognition button -->
+    </form></div>
+
+    <audio id="button-sound" preload="auto" src=""></audio> <!-- Preload audio file -->
+
+    <script>
+        function playButtonClickSound(soundFileName) {
+            var audio = document.getElementById("button-sound");
+            audio.src = soundFileName; // Set the source file
+            audio.play(); // Play the audio
+        }
+    </script>
+</body>
+</html>
+<!-- <form action="aadhaar.html">
+    <button type="submit">
+        <img src="fing.jpg" alt="Fingerprint">
+    </button>
+</form> -->

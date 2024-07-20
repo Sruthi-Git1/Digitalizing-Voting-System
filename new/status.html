@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detected</title>
+    <link rel="shortcut icon" type="image/png" href="1.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212; /* Dark shade background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .status-container {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f5f5f5; /* Lighter shade background for container */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #e74c3c; /* Red color for error message */
+            text-transform: uppercase; /* Uppercase for status message */
+        }
+
+        p {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .status-symbol {
+            font-size: 60px; /* Increased size of status symbol */
+            color: #e74c3c; /* Red color for status symbol */
+            margin-bottom: 10px;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 12px 24px;
+            background-color: #e74c3c; /* Red color for button */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        button:hover {
+            background-color: #c0392b; /* Dark red on hover for button */
+            color: #fff; /* White text color on hover */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="status-container">
+        <div class="status-symbol">&#10060;</div>
+        <h1>Fraud Detected</h1>
+        <p>This action has been flagged as fraudulent.</p>
+        <h2>Status: Already Voted</h2>
+        <p style="color: #e74c3c;">You have already cast your vote.</p>
+        <form action="type.html">
+        <button onclick="playErrorSound()">Return</button></form>
+    </div>
+
+    <audio id="error-sound" preload="auto" src="error.mp3"></audio> <!-- Preload error sound -->
+
+    <script>
+        // Play error sound immediately when the page is loaded or redirected
+        window.onload = function() {
+            playErrorSound();
+            // Continuously play the sound at regular intervals
+            setInterval(function() {
+                playErrorSound();
+            }, 1000); // 1000 milliseconds (1 second) interval
+        };
+
+        // Function to play error sound
+        function playErrorSound() {
+            var audio = document.getElementById("error-sound");
+            audio.play(); // Play the audio
+        }
+    </script>
+</body>
+</html>

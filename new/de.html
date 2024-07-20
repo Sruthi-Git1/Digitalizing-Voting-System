@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Button List</title>
+    <style>
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        button {
+            margin-bottom: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Your HTML content here -->
+    <div class="button-container">
+        <button onclick="showConfirm('Vallapu Rama Rao')">Vallapu Rama Rao</button>
+        <button onclick="showConfirm('Singireddy Krishna Reddy')">Singireddy Krishna Reddy</button>
+        <button onclick="showConfirm('Kota Krishna Yadav')">Kota Krishna Yadav</button>
+        <button onclick="showConfirm('Balram Reddy')">Balram Reddy</button>
+        <button onclick="showConfirm('Ramireddy Subba Lakshmi')">Ramireddy Subba Lakshmi</button>
+        <button onclick="showConfirm('Rellam Bhuvanesh')">Rellam Bhuvanesh</button>
+        <button onclick="showConfirm('Akkala Surender Goud')">Akkala Surender Goud</button>
+        <button onclick="showConfirm('Md Khadheer')">Md Khadheer</button>
+        <button onclick="showConfirm('Kotha Siddharth Reddy')">Kotha Siddharth Reddy</button>
+        <button onclick="showConfirm('Veeraraju Revullu')">Veeraraju Revullu</button>
+    </div>
+    <!-- Hidden form to store the selected candidate -->
+    <form method="post" action="test.php">
+        <input type="hidden" id="selected_candidate" name="candidate" value="">
+    </form>
+
+    <script>
+        // Function to handle button click
+        function showConfirm(candidateName) {
+            // Display a confirmation dialog box
+
+            const result = confirm(`Are you sure you want to vote for ${candidateName}?`);
+            if (result) {
+                // Set the value of the hidden input field to the selected candidate name
+                document.getElementById("selected_candidate").value = candidateName;
+                // Submit the form
+                document.querySelector('form').submit();
+            } else {
+                // Display an alert indicating the vote has been cancelled
+                alert("Your vote has been cancelled.");
+            }
+        }
+    </script>
+</body>
+</html>

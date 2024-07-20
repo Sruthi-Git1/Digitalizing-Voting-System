@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login</title>
+<!-- Favicon -->
+<link rel="icon" href="1.png" type="image/x-icon">
+<!-- Styles -->
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    color: #333; /* Dark text color */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Minimum height of the viewport */
+    background-image: url('1.gif'); /* Assuming the image file is named '1.webp' and is in the same folder */
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .login-container {
+    background-image: url('1.webp'); /* White background for login container with some transparency */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    margin-top: 50px; /* Added margin to move the login container down */
+  }
+  .input-field {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 16px;
+    width: calc(100% - 20px);
+    border: 1px solid #007bff; /* Border color */
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+    color: #007bff; /* Light blue text color */
+  }
+  .input-field:hover {
+    border-color: #fab26e; /* Blue border color on hover */
+  }
+  .password-toggle {
+    display: inline-block;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  .login-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #007bff; /* Blue button background color */
+    border: none;
+    color: #fff; /* White text color for button */
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Added transition for color change */
+  }
+  .login-button:hover {
+    background-color: #3600b3; /* Darker blue on hover */
+    color: #ebafaf; /* Light red text color on hover */
+  }
+  h1 {
+    margin-bottom: 30px;
+    color: #007bff; /* Blue heading color */
+  }
+</style>
+</head>
+<body>
+<div class="login-container">
+  <h1>ADMIN LOGIN</h1>
+  <form method="POST" action="login.php">
+    <div>
+      <input type="text"  name="adminid" class="input-field" placeholder="Admin ID" autocomplete="off">
+      <!-- Add autocomplete="off" attribute above -->
+    </div>
+    <div>
+      <input type="password"name="password" class="input-field" id="password" placeholder="Password" autocomplete="off">
+      <!-- Add autocomplete="off" attribute above -->
+      <input type="checkbox" id="toggle-password" class="password-toggle">
+      <label for="toggle-password" class="password-toggle">Show Password</label>
+    </div>
+    <button type="submit" class="login-button" onclick="playClickSound('submitButton')">Login</button>
+  </form>
+</div>
+
+<audio id="text-field-sound" src="audio.mp3"></audio>
+<audio id="submit-button-sound" src="switch.mp3" preload="auto"></audio>
+
+<script>
+  function playClickSound(type) {
+    if (type === 'textField') {
+      var sound = document.getElementById("text-field-sound");
+      sound.play();
+    } else if (type === 'submitButton') {
+      var sound = document.getElementById("submit-button-sound");
+      sound.play();
+    }
+  }
+
+  document.getElementById("toggle-password").addEventListener("change", function() {
+    var passwordField = document.getElementById("password");
+    if (passwordField.type === "password") {
+      passwordField.type = "text";
+    } else {
+      passwordField.type = "password";
+    }
+  });
+</script>
+
+</body>
+</html>

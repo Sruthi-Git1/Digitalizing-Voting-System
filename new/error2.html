@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detected</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212; /* Dark shade background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .status-container {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f5f5f5; /* Lighter shade background for container */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #e74c3c; /* Red color for error message */
+            text-transform: uppercase; /* Uppercase for status message */
+        }
+
+        p {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .status-symbol {
+            font-size: 60px; /* Increased size of status symbol */
+            color: #e74c3c; /* Red color for status symbol */
+            margin-bottom: 10px;
+        }
+
+        .logout-button {
+            padding: 15px 30px;
+            font-size: 20px;
+            background-color: #3498db; /* Blue color for button */
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .logout-button:hover {
+            background-color: #2980b9; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="status-container">
+        <div class="status-symbol">&#10060;</div>
+        <h1>Fraud Detected</h1>
+        <p>This action has been flagged as fraudulent.</p>
+        <h2>Status: Already Voted</h2>
+        <p style="color: #e74c3c;">You have already cast your vote.</p>
+<form action="type.html">
+        <button class="logout-button" >Logout</button>
+    </form>
+    </div>
+
+    <!-- <script>
+        function logout() {
+            // Implement logout functionality here
+            // For example, redirect the user to the logout page
+            window.location.href = "type.html";
+        }
+    </script> -->
+</body>
+</html>

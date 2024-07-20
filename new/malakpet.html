@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malakpet Constituency</title>
+    <link rel="icon" type="image/png" href="1.png"> <!-- Add favicon -->
+    <style>
+         h1 {
+            text-align: center; /* Center align the text */
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        button {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex; /* Make button a flex container */
+            justify-content: space-between; /* Space between content and "vote" */
+            align-items: center; 
+            background-color: #ef6b74;
+            color: rgb(3, 2, 11);
+            width: 350px; /* Set a fixed width for all buttons */
+        }
+        button:hover {
+            background-color: #ffaa8e; /* Different color on hover */
+        }
+        button img {
+            margin-right: 10px; /* Adjust the margin between the image and the text */
+            width: 50px; /* Adjust image width */
+            height: 50px; /* Adjust image height */
+        }
+        .button-text {
+            flex-grow: 1; /* Allow text to expand and take up remaining space */
+            white-space: nowrap; /* Prevent text from wrapping */
+            overflow: hidden; /* Hide overflow text */
+            text-overflow: ellipsis; /* Show ellipsis (...) for overflow text */
+        }
+        .vote {
+            margin-right: 10px; /* Add margin to separate "vote" text from other content */
+        }
+        .confirmation-box {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border: 2px solid black;
+            z-index: 9999; /* Ensure the confirmation box is above other elements */
+        }
+    </style>
+</head>
+<body>
+   <h1>Malakpet Constituency</h1>
+    <div class="button-container">
+        <button onclick="showConfirm('Sunil Mishra')">
+            <img src="images/sflower.jpg" alt="Image 2">
+            <span class="button-text">Sunil Mishra</span>
+            <span class="vote">vote</span>
+        </button>
+        <button onclick="showConfirm('Swetha Singh')">
+            <img src="images/lath.jpg" alt="Image 2">
+            <span class="button-text">Swetha Singh</span>
+            <span class="vote">vote</span>
+        </button>
+        <button onclick="showConfirm('Ajay kapoor')">
+            <img src="images/clock.jpg" alt="Image 2">
+            <span class="button-text">Ajay kapoor</span>
+            <span class="vote">vote</span>
+        </button>
+        <button onclick="showConfirm('Kavita Gupta')">
+            <img src="images/sun.jpg" alt="Image 2">
+            <span class="button-text">Kavita Gupta</span>
+            <span class="vote">vote</span>
+        </button>
+        <button onclick="showConfirm('Vishal Mehta')">
+            <img src="images/bucket.png" alt="Image 2">
+            <span class="button-text">Vishal Mehta</span>
+            <span class="vote">vote</span>
+        </button>
+        <button onclick="showConfirm('Anjali Agarwal')">
+            <img src="images/star.jpg" alt="Image 2">
+            <span class="button-text">Anjali Agarwal</span>
+            <span class="vote">vote</span>
+        </button>
+        <button onclick="showConfirm('Ravi Kumar')">
+            <img src="images/wheel.jpg" alt="Image 2">
+            <span class="button-text">Ravi Kumar</span>
+            <span class="vote">vote</span>
+        </button>
+        <button onclick="showConfirm('Radhika Sharma')">
+            <img src="images/target.jpg" alt="Image 2">
+            <span class="button-text">Radhika Sharma</span>
+            <span class="vote">vote</span>
+        </button>
+    </div>
+
+    
+
+    <form method="post" action="test.php">
+        <input type="hidden" id="selected_candidate" name="candidate" value="">
+    </form>
+
+    <script>
+        // Function to handle button click
+        function showConfirm(candidateName) {
+            // Display a confirmation dialog box
+
+            const result = confirm(`Are you sure you want to vote for ${candidateName}?`);
+            if (result) {
+                // Set the value of the hidden input field to the selected candidate name
+                document.getElementById("selected_candidate").value = candidateName;
+                // Submit the form
+                document.querySelector('form').submit();
+            } else {
+                // Display an alert indicating the vote has been cancelled
+                alert("Your vote has been cancelled.");
+            }
+        }
+    </script>
+</body>
+</html>

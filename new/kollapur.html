@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kollapur Constituency</title>
+    <link rel="icon" type="image/png" href="1.png"> <!-- Add favicon -->
+    <style>
+         h1 {
+            text-align: center; /* Center align the text */
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        button {
+            margin-bottom: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex; /* Make button a flex container */
+            align-items: center; 
+            justify-content: space-between; /* Align items vertically and push text to right */
+            background-color: #ef6b74;
+            color: rgb(3, 2, 11); /* Align items vertically */
+            width: 300px; /* Set a fixed width for all buttons */
+        }
+        button:hover {
+            background-color: #ffaa8e; /* Different color on hover */
+        }
+        button img {
+            margin-right: 10px; /* Adjust the margin between the image and the text */
+            width: 50px; /* Adjust image width */
+            height: 50px; /* Adjust image height */
+        }
+        .confirmation-box {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border: 2px solid black;
+            z-index: 9999; /* Ensure the confirmation box is above other elements */
+        }
+    </style>
+</head>
+<body>
+   <h1>Kollapur Constituency - 57</h1>
+    <div class="button-container">
+        <button onclick="showConfirm('Arjun Singh')">
+            <img src="images/bow.jpg" alt="Image 1"> <!-- Add image -->
+            <span>Arjun Singh</span>
+            <span>vote</span>
+        </button>
+        <button onclick="showConfirm('Priya Patel')">
+            <img src="images/bulb.webp" alt="Image 2">
+            <span>Priya Patel</span>
+            <span>vote</span>
+        </button>
+        <button onclick="showConfirm('Rahul Sharma')">
+            <img src="images/tel.jpg" alt="Image 3">
+            <span>Rahul Sharma</span>
+            <span>vote</span>
+        </button>
+        <button onclick="showConfirm('Manisha Reddy')">
+            <img src="images/sun.jpg" alt="Image 4">
+            <span>Manisha Reddy</span>
+            <span>vote</span>
+        </button>
+        <button onclick="showConfirm('Deepak Gupta')">
+            <img src="images/bucket.png" alt="Image 5">
+            <span>Deepak Gupta</span>
+            <span>vote</span>
+        </button>
+        <button onclick="showConfirm('Sunita Verma')">
+            <img src="images/star.jpg" alt="Image 6">
+            <span>Sunita Verma</span>
+            <span>vote</span>
+        </button>
+        <button onclick="showConfirm('Vikram Singh')">
+            <img src="images/wheel.jpg" alt="Image 7">
+            <span>Vikram Singh</span>
+            <span>vote</span>
+        </button>
+        <button onclick="showConfirm('Ananya Deshmukh')">
+            <img src="images/target.jpg" alt="Image 8">
+            <span>Ananya Deshmukh</span>
+            <span>vote</span>
+        </button>
+        <button onclick="showConfirm('Rohan Joshi')">
+            <img src="images/wheel.jpg" alt="Image 9">
+            <span>Rohan Joshi</span>
+            <span>vote</span>
+        </button>
+    </div>
+
+    <form method="post" action="test.php">
+        <input type="hidden" id="selected_candidate" name="candidate" value="">
+    </form>
+
+    <script>
+        // Function to handle button click
+        function showConfirm(candidateName) {
+            // Display a confirmation dialog box
+
+            const result = confirm(`Are you sure you want to vote for ${candidateName}?`);
+            if (result) {
+                // Set the value of the hidden input field to the selected candidate name
+                document.getElementById("selected_candidate").value = candidateName;
+                // Submit the form
+                document.querySelector('form').submit();
+            } else {
+                // Display an alert indicating the vote has been cancelled
+                alert("Your vote has been cancelled.");
+            }
+        }
+    </script>
+</body>
+</html>

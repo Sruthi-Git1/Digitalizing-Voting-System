@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Button List</title>
+    <style>
+         h1 {
+            text-align: center; /* Center align the text */
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+
+        }
+        button {
+            margin-bottom: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex; /* Make button a flex container */
+            align-items: center; 
+            background-color: #ef6b74;
+            color :rgb(3, 2, 11)/* Align items vertically */
+        }
+        button img {
+            margin-right: 10px; /* Adjust the margin between the image and the text */
+            width: 50px; /* Adjust image width */
+            height: 50px; /* Adjust image height */
+        }
+    </style>
+</head>
+<body>
+   <h1 >Lal Bahadur Nagar Constituency - 49</h1>
+    <div class="button-container">
+        <button onclick="showConfirm('Vallapu Rama Rao')">
+            <img src="images/bulb.webp" alt="Image 1"> <!-- Add image -->
+            <pre> Vallapu Rama Rao               vote</pre>
+        </button>
+        <button onclick="showConfirm('Singireddy Krishna reddy')">
+            <img src="images/wheel.jpg" alt="Image 2">
+            <pre> Singireddy Krishna reddy       vote</pre>
+        </button>
+        <button onclick="showConfirm('Kota Krishna Yadav')">
+            <img src="images/tree.jpg" alt="Image 2">
+            <pre> Kota Krishna Yadav             vote</pre>
+        </button>
+        <button onclick="showConfirm('Balram Reddy')">
+            <img src="images/sun.jpg" alt="Image 2">
+            <pre> Balram Reddy                   vote</pre>
+        </button>
+        <button onclick="showConfirm('Ramireddy Subba Lakshmi')">
+            <img src="images/tel.jpg" alt="Image 2">
+            <pre> Ramireddy Subba Lakshmi        vote</pre>
+        </button>
+        <button onclick="showConfirm('Rellam Bhuvanesh')">
+            <img src="images/lath.jpg" alt="Image 2">
+            <pre> Rellam Bhuvanesh               vote</pre>
+        </button>
+        <button onclick="showConfirm('Akkala Surender Goud')">
+            <img src="images/bucket.png" alt="Image 2">
+            <pre> Akkala Surender Goud           vote</pre>
+        </button>
+        <button onclick="showConfirm('Md Khadheer')">
+            <img src="images/star.jpg" alt="Image 2">
+            <pre> Md Khadheer                    vote</pre>
+        </button>
+        <button onclick="showConfirm('Kotha Siddharth Reddy')">
+            <img src="images/umb.jpg" alt="Image 2">
+            <pre> Kotha Siddharth Reddy          vote</pre>
+        </button>
+        <button onclick="showConfirm('Veeraraju Revullu')">
+            <img src="images/spe.jpg" alt="Image 2">
+            <pre> Veeraraju Revullu              vote</pre>
+        </button>
+    </div>
+    
+
+    <form method="post" action="test.php">
+        <input type="hidden" id="selected_candidate" name="candidate" value="">
+    </form>
+
+    <script>
+        // Function to handle button click
+        function showConfirm(candidateName) {
+            // Display a confirmation dialog box
+
+            const result = confirm(`Are you sure you want to vote for ${candidateName}?`);
+            if (result) {
+                // Set the value of the hidden input field to the selected candidate name
+                document.getElementById("selected_candidate").value = candidateName;
+                // Submit the form
+                document.querySelector('form').submit();
+            } else {
+                // Display an alert indicating the vote has been cancelled
+                alert("Your vote has been cancelled.");
+            }
+        }
+    </script>
+</body>
+</html>

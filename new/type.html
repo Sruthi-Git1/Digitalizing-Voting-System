@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Election Buttons</title>
+<!-- Favicon -->
+<link rel="icon" href="1.png" type="image/x-icon">
+
+<!-- Styles -->
+<style>
+  body {
+    background-image: url('1.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+  /* Professional abstract background color */
+    display: flex;
+    justify-content: space-between; /* Align items with space between */
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0 20px; /* Add padding to body */
+  }
+  .button-container {
+    text-align: center;
+    margin-bottom: 20px; /* Add margin between button lines */
+  }
+  .election-button {
+    color: #fff; /* Text color */
+    border: none;
+    padding: 40px 80px; /* Increased button size */
+    font-size: 28px; /* Increased font size */
+    margin: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold; /* Bold text */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5); /* Add box shadow for depth */
+  }
+
+  /* Different background colors for each button */
+  .mp-button {
+    background-color: #e74c3c; /* Red */
+  }
+  .mla-button {
+    background-color: #3498db; /* Blue */
+  }
+  .mayor-button {
+    background-color: #2ecc71; /* Green */
+  }
+
+  /* Styling for the logout button */
+  .logout-button {
+    background-color: #f39c12; /* Orange */
+    padding: 20px 40px; /* Adjusted padding for smaller button */
+    border-radius: 10px;
+    position: absolute;
+    top: 10px; /* 10px from top */
+    right: 20px; /* 20px from right */
+  }
+</style>
+</head>
+<body>
+<form action="mp.html"> 
+  <button class="election-button mp-button">MP Election</button>
+</form>
+<form action="mla.html"> 
+<button class="election-button mla-button">MLA Elections</button>
+</form>
+<form action="mayor.html"> 
+<button class="election-button mayor-button">Mayor Election</button>
+</form>
+<form action="index.html">
+<button class="logout-button">Logout</button>
+</form>
+</html>
